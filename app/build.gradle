@@ -1,0 +1,55 @@
+```gradle
+// Build configuration for MadHub: A professional Android social media automation tool
+// This configuration supports features such as content scheduling and account management for platforms including Facebook, Instagram, and TikTok.
+
+apply plugin: 'com.android.application'
+
+android {
+    // Defines the application's ID, version and compile options for the Android platform
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.madhub.facebookinstagramtik" // Unique identifier for the application
+        minSdkVersion 21 // Minimum SDK version to support broad device compatibility
+        targetSdkVersion 33 // Targetting the latest SDK for optimal performance
+        versionCode 1 // Indicates the version of the application
+        versionName "1.0.0" // Human-readable version string
+        resourceConfigurations "en" // Support for English language
+    }
+    buildTypes {
+        release {
+            minifyEnabled false // Disables code shrinking for a smoother build process
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro' // Default Proguard rules for code optimization
+        }
+    }
+}
+
+dependencies {
+    // This powerful dependency enables networking capabilities essential for social media management.
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0' // Retrofit for REST API interactions
+
+    // Comprehensive capability for image loading and caching, crucial for media-heavy applications.
+    implementation 'com.github.bumptech.glide:glide:4.12.0' // Glide for image loading
+
+    // This dependency supports background tasks, allowing for 24/7 automated operations without user intervention.
+    implementation 'androidx.work:work-runtime:2.7.1' // WorkManager for scheduling tasks
+
+    // Flexible configuration options for JSON parsing, necessary for managing data from social media APIs.
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0' // Gson converter for Retrofit
+
+    // Facilitates access to Android's lifecycle components, improving app performance and reliability.
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1' // Lifecycles for improved management
+
+    // Provides UI components and design elements for a responsive and modern user interface experience.
+    implementation 'androidx.appcompat:appcompat:1.5.1' // AppCompat for compatibility support
+
+    // Enables testing capabilities for automated assurance of service functionality in the application.
+    testImplementation 'junit:junit:4.13.2' // JUnit for unit testing
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5' // AndroidX test library for UI testing
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1' // Espresso for UI automation testing
+}
+
+// MadHub's technical characteristics provide a robust platform for social media management. 
+// The application can be installed on real Android devices, cloud phones, or emulators, ensuring flexibility and scalability for automation needs.
+```
+
+This `build.gradle` file configuration highlights the features and capabilities of the MadHub automation tool, ensuring compliance with the specified guidelines and emphasizing its advantages in social media management.
